@@ -18,8 +18,6 @@ const LOG_LEVEL = process.env.LOG_LEVEL || ''//DEBUG
 
 // 定义路由处理函数  
 app.post('/', (req, res) => {
-   const referer = req.headers ? (req.headers.referer  || '')  : ''
-  console.log('referer',referer)
   const params = req.body; 
   // console.log('params',params)
   // 或者，如果参数在请求体中，你可能需要解析请求体，例如使用 body-parser 中间件  
