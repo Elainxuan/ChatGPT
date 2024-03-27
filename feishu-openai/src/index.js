@@ -9,8 +9,8 @@
  // const MsgTable = aircode.db.table("msg"); // 用于保存历史会话的表
  
  // 如果你不想配置环境变量，或环境变量不生效，则可以把结果填写在每一行最后的 "" 内部
- const FEISHU_APP_ID = process.env.APPID || "cli_a6882c8dc8ff900e"; // 飞书的应用 ID
- const FEISHU_APP_SECRET = process.env.SECRET || "l0kymcHk7BHRBDsFDdBBNf5dXZHWLhvS"; // 飞书的应用的 Secret
+ const FEISHU_APP_ID = process.env.APPID || ""; // 飞书的应用 ID
+ const FEISHU_APP_SECRET = process.env.SECRET || ""; // 飞书的应用的 Secret
  const FEISHU_BOTNAME = process.env.BOTNAME || "ChatGPT测试"; // 飞书机器人的名字
  const OPENAI_KEY = process.env.KEY || ""; // OpenAI 的 Key
  const OPENAI_MODEL = process.env.MODEL || "gpt-4"; // 使用的模型
