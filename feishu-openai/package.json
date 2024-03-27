@@ -5,11 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prod": "node server.js",
-    "start": "node server.js"
+    "prod": "node server.js"
   },
   "engines": {
-    "node": "14.*"
+    "node": "14.4.0"
   },
   "dependencies": {
     "@larksuiteoapi/node-sdk": "1.23.0",
