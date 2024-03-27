@@ -9,7 +9,7 @@
     "start": "node server.js"
   },
   "engines": {
-    "node": "14.4.0"
+    "node": "13.*"
   },
   "dependencies": {
     "@larksuiteoapi/node-sdk": "1.23.0",
