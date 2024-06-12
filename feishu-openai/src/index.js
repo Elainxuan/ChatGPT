@@ -36,7 +36,19 @@
  // 回复消息
  async function reply(messageId, content) {
    try{
-     logger(client.v1.event.outboundIp())
+      logger(await client.event.outboundIp.list())
+   } catch(e){
+     logger(e);
+     logger("client.event.outboundIp.list()");
+   }
+  try{
+      logger(await client.outboundIp.list())
+   } catch(e){
+     logger(e);
+     logger(" client.outboundIp.list()");
+   }
+   try{
+     
      return await client.im.message.reply({
      path: {
        message_id: messageId,
