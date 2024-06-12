@@ -13,8 +13,8 @@
  const FEISHU_APP_SECRET = process.env.SECRET || ""; // 飞书的应用的 Secret
  const FEISHU_BOTNAME = process.env.BOTNAME || "ChatGPT测试"; // 飞书机器人的名字
  const OPENAI_KEY = process.env.KEY || ""; // OpenAI 的 Key
- const OPENAI_MODEL = process.env.MODEL || "gpt-4"; // 使用的模型
- //const OPENAI_MODEL = process.env.MODEL || "gpt-4"; // 使用的模型
+ const OPENAI_MODEL = process.env.MODEL || "gpt-4o"; // 使用的模型
+ //const OPENAI_MODEL = process.env.MODEL || "gpt-4o"; // 使用的模型
  const OPENAI_MAX_TOKEN = process.env.MAX_TOKEN || 1024; // 最大 token 的值
 
  const MAX_LENGTH = process.env.MAX_LENGTH || 10000; // 最大 token 的值
