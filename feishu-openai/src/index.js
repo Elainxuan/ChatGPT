@@ -41,12 +41,12 @@
      logger(e);
      logger("client.event.outboundIp.list()");
    }
-  try{
-      logger(await client.outboundIp.list())
-   } catch(e){
-     logger(e);
-     logger(" client.outboundIp.list()");
-   }
+  // try{
+  //     logger(await client.outboundIp.list())
+  //  } catch(e){
+  //    logger(e);
+  //    logger(" client.outboundIp.list()");
+  //  }
    try{
      
      return await client.im.message.reply({
