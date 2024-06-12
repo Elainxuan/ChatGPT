@@ -36,7 +36,7 @@
  // 回复消息
  async function reply(messageId, content) {
    try{
-     logger(client.event.outboundIp())
+     logger(client.v1.event.outboundIp())
      return await client.im.message.reply({
      path: {
        message_id: messageId,
@@ -49,6 +49,7 @@
      },
    });
    } catch(e){
+     logger(e);
      logger("send message to feishu error",e,messageId,content);
    }
  }
