@@ -61,6 +61,7 @@
    });
    } catch(e){
      // logger(e);
+     logger("GPT回复：" + content);
      logger("send message to feishu error",e,messageId,content);
    }
  }
