@@ -62,6 +62,7 @@
    } catch(e){
      // logger(e);
      logger("GPT回复：" + content);
+     logger("模型参数：" + OPENAI_MODEL);
      logger("send message to feishu error",e,messageId,content);
    }
  }
