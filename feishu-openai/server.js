@@ -38,8 +38,8 @@ app.post('/', (req, res) => {
 
 // app.get('/', (req, res) => {  
 //   // 从请求中获取参数  
- const params = req.query; // 如果参数在查询字符串中
- console.log('params',params);
+// const params = req.query; // 如果参数在查询字符串中
+// console.log('params',params);
 //   // 或者，如果参数在请求体中，你可能需要解析请求体，例如使用 body-parser 中间件  
 //   // 构建上下文对象（根据实际需求）  
 //   const context = {  
