@@ -21,7 +21,7 @@ const LOG_LEVEL = process.env.LOG_LEVEL || ''//DEBUG
 // 定义路由处理函数  
 app.post('/', (req, res) => {
   const params = req.body; 
-  // console.log('params',params)
+  console.log('params',params)
   // 或者，如果参数在请求体中，你可能需要解析请求体，例如使用 body-parser 中间件  
   // 构建上下文对象（根据实际需求）  
   const context = {  
@@ -38,8 +38,8 @@ app.post('/', (req, res) => {
 
 // app.get('/', (req, res) => {  
 //   // 从请求中获取参数  
-//   const params = req.query; // 如果参数在查询字符串中
-//   console.log('params',params)  
+ const params = req.query; // 如果参数在查询字符串中
+ console.log('params',params);
 //   // 或者，如果参数在请求体中，你可能需要解析请求体，例如使用 body-parser 中间件  
 //   // 构建上下文对象（根据实际需求）  
 //   const context = {  
@@ -62,6 +62,7 @@ const server = app.listen(PORT, () => {
   if (addressInfo && typeof addressInfo === 'object' && addressInfo.address!== '::') {
     // 如果是 IPv4 地址
     serverIp = addressInfo.address;
+    console.log(`IPv4 地址：${serverIp}`);
   } else {
     // 如果是 IPv6 地址或者其他情况，遍历网络接口获取 IPv4 地址
     const interfaces = os.networkInterfaces();
@@ -69,6 +70,7 @@ const server = app.listen(PORT, () => {
       const iface = interfaces[devName];
       for (let i = 0; i < iface.length; i++) {
         const alias = iface[i];
+         console.log('IP:'+alias.address);
         if (alias.family === 'IPv4' && alias.address!== '127.0.0.1' &&!alias.internal) {
           serverIp = alias.address;
           break;
@@ -82,7 +84,6 @@ const server = app.listen(PORT, () => {
   } else {
     console.log('无法确定服务端 IP 地址。');
   }
-  
 });
 
 
