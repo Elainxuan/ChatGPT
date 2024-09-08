@@ -5,6 +5,8 @@ const handleRequest = require('./src/index');
 const express = require('express');  
 const cors = require('cors');  
 const bodyParser = require('body-parser');
+const os = require('os');
+const net = require('net');
 
 const app = express(); 
 app.use(cors())
@@ -53,8 +55,34 @@ app.post('/', (req, res) => {
 // });  
   
 // 启动服务器  
-app.listen(PORT, () => {  
+const server = app.listen(PORT, () => {  
   console.log(`Server is running on port ${PORT}`);  
+   const addressInfo = server.address();
+  let serverIp;
+  if (addressInfo && typeof addressInfo === 'object' && addressInfo.address!== '::') {
+    // 如果是 IPv4 地址
+    serverIp = addressInfo.address;
+  } else {
+    // 如果是 IPv6 地址或者其他情况，遍历网络接口获取 IPv4 地址
+    const interfaces = os.networkInterfaces();
+    for (const devName in interfaces) {
+      const iface = interfaces[devName];
+      for (let i = 0; i < iface.length; i++) {
+        const alias = iface[i];
+        if (alias.family === 'IPv4' && alias.address!== '127.0.0.1' &&!alias.internal) {
+          serverIp = alias.address;
+          break;
+        }
+      }
+      if (serverIp) break;
+    }
+  }
+  if (serverIp) {
+    console.log(`服务端 IP 地址是：${serverIp}`);
+  } else {
+    console.log('无法确定服务端 IP 地址。');
+  }
+  
 });
 
 
